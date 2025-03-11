@@ -1,4 +1,18 @@
 from tkinter import *
+import math
+
+def click(value):
+    if value=='C':
+        ex=entryField.get()
+        ex=ex[0:len(ex)-1]
+        entryField.delete(0,END)
+        entryField.insert(0,ex)
+    
+    if value=='CE':
+        entryField.delete(0,END)
+    
+    if value=='√':
+        math.sqrt()
 
 root=Tk()
 root.title('smart calculator')
@@ -23,7 +37,7 @@ rowvalue=1
 columnvalue=0
 for i in button_text_list:
     button=Button(root,width=5, height=2,relief=SUNKEN,text=i,bg='deepskyblue2',fg='white',
-              font=('arial',18,'bold'),activebackground='deepskyblue2')
+              font=('arial',18,'bold'),activebackground='deepskyblue2',command=lambda button=i: click(button))
     button.grid(row=rowvalue, column=columnvalue, pady=1)
     columnvalue+=1
     if columnvalue>7:
