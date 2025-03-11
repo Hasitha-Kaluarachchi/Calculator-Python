@@ -3,10 +3,14 @@ from tkinter import *
 root=Tk()
 root.title('smart calculator')
 root.config(bg='deepskyblue2')
-root.geometry('680x500+100+100')
+root.geometry('680x486+100+100')
 
 
-entryField=Entry(root,font=('arial',14,'bold'),bg='deepskyblue2',fg='white',bd=10,relief=SUNKEN,width=30)
+logoImage=PhotoImage(file='logo.png')
+logoLabel=Label(root,image=logoImage,bg='deepskyblue2')
+logoLabel.grid(row=0,column=0,)
+
+entryField=Entry(root,font=('arial',20,'bold'),bg='deepskyblue2',fg='white',bd=10,relief=SUNKEN,width=30)
 entryField.grid(row=0,column=0,columnspan=8)
 
 button_text_list = ["C", "CE", "√", "+", "π", "cosθ", "tanθ", "sinθ", 
